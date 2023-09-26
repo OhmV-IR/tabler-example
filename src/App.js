@@ -1,6 +1,6 @@
 import './App.css';
 import React, {useState} from 'react';
-import {IconBrandPinterest, IconCloudLockOpen, IconSettings, IconPower, IconLock, IconCheck, IconBrandTwitter} from '@tabler/icons-react'
+import {IconBrandPinterest, IconCloudLockOpen, IconSettings, IconPower, IconLock, IconCheck, IconBrandTwitter, IconX} from '@tabler/icons-react'
 function App() {
   // adds a locked variable and creates a function called setLocked
   const [locked, setLocked] = useState(false)
@@ -23,6 +23,7 @@ function App() {
     <p>Using the tabler package, you can add icons to represent various
     different actions and brands</p>
     <a href="https://pinterest.com"><IconBrandPinterest></IconBrandPinterest></a>
+    <IconX></IconX>
     <IconCheck></IconCheck>
     <a href="https://x.com"><IconBrandTwitter></IconBrandTwitter></a>
     <IconPower></IconPower>
