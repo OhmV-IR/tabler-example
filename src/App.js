@@ -37,9 +37,6 @@ function App() {
         <IconBellRinging2Filled></IconBellRinging2Filled>
       </div>
       <div className="right">
-        <button type="button" class="btn" data-bs-container="body" data-bs-toggle="popover" data-bs-placement="top" data-bs-content="Top popover">
-            Popover on top
-        </button>
       </div></>
   );
 }
