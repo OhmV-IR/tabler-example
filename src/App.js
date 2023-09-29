@@ -25,28 +25,28 @@ function App() {
     function resetAlert(){
       document.getElementById("successAlert").style.display = "none";
     }
-    setTimeout(resetAlert, 5000);
+    setTimeout(resetAlert, 7500);
   }
   const warningButtonOnclick = async event => {
     document.getElementById("warningAlert").style.display = "block";
     function resetAlert(){
       document.getElementById("warningAlert").style.display = "none";
     }
-    setTimeout(resetAlert, 5000);
+    setTimeout(resetAlert, 7500);
   }
   const dangerButtonOnclick = async event => {
     document.getElementById("dangerAlert").style.display = "block";
     function resetAlert(){
       document.getElementById("dangerAlert").style.display = "none";
     }
-    setTimeout(resetAlert, 5000);
+    setTimeout(resetAlert, 7500);
   }
   const infoButtonOnclick = async event => {
     document.getElementById("infoAlert").style.display = "block";
     function resetAlert(){
       document.getElementById("infoAlert").style.display = "none";
     }
-    setTimeout(resetAlert, 5000);
+    setTimeout(resetAlert, 7500);
   }
   // {locked
   // ? yes condition html goes here
