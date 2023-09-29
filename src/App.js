@@ -51,6 +51,13 @@ function App() {
   // {locked
   // ? yes condition html goes here
   // : no condition html goes here}
+  /* features not working morgue lies below:
+  <button type="button" class="btn btn-primary" data-bs-trigger="hover" data-bs-toggle="popover"
+  title="Popover title" data-bs-content="And here's some amazing content. It's very engaging. Right?"
+>
+  Very cool button(hover on me)
+</button>
+  */
   return (
     <><div className="topRightCorner">
     {locked
@@ -66,11 +73,6 @@ function App() {
 <div id="dangerAlert" className="alert alert-danger" role="alert">Danger! World is ending in 30 seconds!!!</div>
 <div id="infoAlert" className="alert alert-info" role="alert">Info: This is a very cool website built by @OhmVIR</div>
 </div></div></div></div><div className="lockingDiv">
-<button type="button" class="btn btn-primary" data-bs-trigger="hover" data-bs-toggle="popover"
-  title="Popover title" data-bs-content="And here's some amazing content. It's very engaging. Right?"
->
-  Very cool button(hover on me)
-</button>
     <div className="leftAlign">
       <p>Using the tabler package, you can add icons to represent various
         different actions and brands</p>
