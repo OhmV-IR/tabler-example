@@ -1,5 +1,25 @@
+#successAlert {
+  display: none;
+}
+#warningAlert {
+  display: none;
+}
+#dangerAlert {
+  display: none;
+}
+#infoAlert {
+  display: none;
+}
+.lockingDiv {
+  display: block;
+}
 .leftAlign {
   margin-left: 2%;
+}
+.right {
+  position:absolute;
+  top:65%;
+  right:5%;
 }
 .center {
   margin-left: 45%;
