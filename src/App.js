@@ -1,12 +1,15 @@
 import './App.css';
 import React, {useState} from 'react';
-import {IconBellRinging, IconBellRinging2, IconBellRingingFilled, IconBellRinging2Filled, IconBrandPinterest, IconCloudLockOpen, IconSettings, IconPower, IconLock, IconCheck, IconBrandTwitter, IconX} from '@tabler/icons-react'
+import {IconBellRinging, IconBellRinging2, IconBellRingingFilled, IconBellRinging2Filled, IconBrandGithub, IconBrandPinterest, IconCloudLockOpen, IconSettings, IconPower, IconLock, IconCheck, IconBrandTwitter, IconX} from '@tabler/icons-react'
 function App() {
   // adds a locked variable and creates a function called setLocked
   const [locked, setLocked] = useState(false)
   const triggerLock = async event => {
     //code to lock here
+    // setLocked function is created by react and input true/false to change the global variable
     await setLocked(true);
+    // getElementsByClassName returns all the elemenets in an array so the for loop
+    // iterates over them and hides each one
     var lockingDiv = document.getElementsByClassName("lockingDiv");
     for(let i = 0; i < lockingDiv.length; i++){
       lockingDiv[i].style.display = "none";
@@ -20,11 +23,14 @@ function App() {
       lockingDiv[i].style.display = "block";
     }
   }
+  // Adds an event that is triggered by clicking the connected button
   const successButtonOnclick = async event => {
+    // Displays the element for 7.5s then hides it again
     document.getElementById("successAlert").style.display = "block";
     function resetAlert(){
       document.getElementById("successAlert").style.display = "none";
     }
+    // Sets code to execute after 7500ms
     setTimeout(resetAlert, 7500);
   }
   const warningButtonOnclick = async event => {
@@ -74,14 +80,14 @@ function App() {
 <div id="infoAlert" className="alert alert-info" role="alert">Info: This is a very cool website built by @OhmVIR</div>
 </div></div></div></div><div className="lockingDiv">
     <div className="leftAlign">
-      <p>Using the tabler package, you can add icons to represent various
-        different actions and brands</p>
-      <a href="https://pinterest.com"><IconBrandPinterest className="text-pinterest-red"></IconBrandPinterest></a>
+      <p>Using the <a href="https://www.github.com/tabler/tabler" target="_blank" rel="noreferrer">tabler package,</a> you can add icons representing brands and other actions to your website</p>
+      <a href="https://www.pinterest.com" target="_blank" rel="noreferrer"><IconBrandPinterest className="text-pinterest-red"></IconBrandPinterest></a>
       <IconX className="text-red"></IconX>
       <IconCheck className="text-green"></IconCheck>
-      <a href="https://x.com"><IconBrandTwitter className="text-blue"></IconBrandTwitter></a>
+      <a href="https://x.com" target="_blank" rel="noreferrer"><IconBrandTwitter className="text-blue"></IconBrandTwitter></a>
       <IconPower className="text-black"></IconPower>
       <IconSettings className="text-grey"></IconSettings>
+      <a href="https://www.github.com/tabler/tabler" target="_blank" rel="noreferrer"><IconBrandGithub className="text-github"></IconBrandGithub></a>
     </div>
       <div className="center">
         <IconBellRinging></IconBellRinging>
@@ -97,4 +103,5 @@ function App() {
       </div></div></>
   );
 }
+// Most of the HTML uses predefined css classes that are in app.css and can be found at github.com/tabler/tabler
 export default App;
