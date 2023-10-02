@@ -95,10 +95,10 @@ function App() {
         <IconBellRingingFilled></IconBellRingingFilled>
         <IconBellRinging2Filled></IconBellRinging2Filled>
       </div>
-<button className="btn btn-success btn-lg button1" onClick={successButtonOnclick}>Successful action(OK) large button</button>
-<button className="btn btn-warning btn-sm w-25 button2" onClick={warningButtonOnclick}>Uh oh this is a warning small button</button>
-<button className="btn btn-danger w-25 button3" onClick={dangerButtonOnclick}>This button starts WW3 25w button</button>
-<button className="btn btn-info w-25 button4" onClick={infoButtonOnclick}>Here lies useful information 25w button</button>
+<button className="btn btn-success btn-lg button1" onClick={successButtonOnclick}>Click me! successful large button</button>
+<button className="btn btn-warning btn-sm w-25 button2" onClick={warningButtonOnclick}>Click me! warning small button</button>
+<button className="btn btn-danger w-25 button3" onClick={dangerButtonOnclick}>Click me! dangerous button 25w button</button>
+<button className="btn btn-info w-25 button4" onClick={infoButtonOnclick}>Click me! I give info 25w button</button>
 <button className="btn btn-outline-success w-25 button5">This is an outlined button</button>
 <button className="btn btn-outline-dark w-25 button6">This is a ghost button</button>
 <a href="https://facebook.com" target="_blank" rel="noreferrer"><button className="btn btn-square btn-azure w-25 button7">
