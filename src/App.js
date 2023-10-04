@@ -1,6 +1,6 @@
 import './App.css';
 import React, {useState} from 'react';
-import {IconBellRinging, IconBellRinging2, IconBellRingingFilled, IconBellRinging2Filled, IconBrandGithub, IconBrandPinterest, IconCloudLockOpen, IconSettings, IconPower, IconLock, IconCheck, IconBrandTwitter, IconX} from '@tabler/icons-react'
+import {IconBellRinging, IconBellRinging2Filled, IconBrandGithub, IconBrandPinterest, IconCloudLockOpen, IconSettings, IconPower, IconLock, IconCheck, IconBrandTwitter, IconX} from '@tabler/icons-react'
 function App() {
   // adds a locked variable and creates a function called setLocked
   const [locked, setLocked] = useState(false)
@@ -27,32 +27,57 @@ function App() {
   const successButtonOnclick = async event => {
     // Displays the element for 7.5s then hides it again
     document.getElementById("successAlert").style.display = "block";
+    document.getElementById("pageTitle").innerHTML = "Success!";
+
     function resetAlert(){
       document.getElementById("successAlert").style.display = "none";
+      document.getElementById("pageTitle").innerHTML = "tabler-example";
     }
     // Sets code to execute after 7500ms
     setTimeout(resetAlert, 7500);
   }
   const warningButtonOnclick = async event => {
     document.getElementById("warningAlert").style.display = "block";
+    document.getElementById("pageTitle").innerHTML = "uh oh....";
     function resetAlert(){
       document.getElementById("warningAlert").style.display = "none";
+      document.getElementById("pageTitle").innerHTML = "tabler-example";
     }
     setTimeout(resetAlert, 7500);
   }
   const dangerButtonOnclick = async event => {
     document.getElementById("dangerAlert").style.display = "block";
+    document.getElementById("pageTitle").innerHTML = "dangerous thing";
     function resetAlert(){
       document.getElementById("dangerAlert").style.display = "none";
+      document.getElementById("pageTitle").innerHTML = "tabler-example";
     }
     setTimeout(resetAlert, 7500);
   }
   const infoButtonOnclick = async event => {
     document.getElementById("infoAlert").style.display = "block";
+    document.getElementById("pageTitle").innerHTML = "informational tab";
     function resetAlert(){
       document.getElementById("infoAlert").style.display = "none";
+      document.getElementById("pageTitle").innerHTML = "tabler-example";
     }
     setTimeout(resetAlert, 7500);
+  }
+  function transitionFunction1(){
+
+  }
+  function transitionFunction2(){
+
+  }
+  const offToOnTransition = async event => {
+    document.getElementById("bellicon1").style.display = "none";
+    document.getElementById("bellicon1transition").style.display = "block";
+    transitionFunction1();
+  }
+  const onToOffTransition = async event => {
+    document.getElementById("bellicon2").style.display = "none";
+    document.getElementById("bellicon2transition").style.display = "block";
+    transitionFunction2();
   }
   // {locked
   // ? yes condition html goes here
@@ -65,7 +90,9 @@ function App() {
 </button>
   */
   return (
-    <><div className="topRightCorner">
+    <>
+    <title id="pageTitle">tabler-example</title>
+    <div className="topRightCorner">
     {locked
       ? <IconLock id="topRightIcon" onClick={triggerUnlock} />
       : <IconCloudLockOpen id="topRightIcon" onClick={triggerLock} />}
@@ -90,10 +117,10 @@ function App() {
       <a href="https://www.github.com/tabler/tabler" target="_blank" rel="noreferrer"><IconBrandGithub className="text-github"></IconBrandGithub></a>
     </div>
       <div className="center">
-        <IconBellRinging></IconBellRinging>
-        <IconBellRinging2></IconBellRinging2>
-        <IconBellRingingFilled></IconBellRingingFilled>
-        <IconBellRinging2Filled></IconBellRinging2Filled>
+        <IconBellRinging id="bellicon1" onClick={offToOnTransition}></IconBellRinging>
+        <IconBellRinging id="bellicon1transition"></IconBellRinging>
+        <IconBellRinging2Filled id="bellicon2transition"></IconBellRinging2Filled>
+        <IconBellRinging2Filled id="bellicon2" onClick={onToOffTransition}></IconBellRinging2Filled>
       </div>
 <button className="btn btn-success btn-lg button1" onClick={successButtonOnclick}>Click me! successful large button</button>
 <button className="btn btn-warning btn-sm w-25 button2" onClick={warningButtonOnclick}>Click me! warning small button</button>
