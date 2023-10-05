@@ -1,4 +1,5 @@
 import './App.css';
+import { Analytics } from '@vercel/analytics/react';
 import React, { useState } from 'react';
 import { IconBellRinging, IconBellRingingFilled, IconBrandGithub, IconBrandPinterest, IconCloudLockOpen, IconSettings, IconPower, IconLock, IconCheck, IconBrandTwitter, IconX } from '@tabler/icons-react'
 function App() {
@@ -112,6 +113,7 @@ function App() {
   */
   return (
     <>
+    <Analytics></Analytics>
       <title id="pageTitle">tabler-example</title>
       <div className="topRightCorner">
         {locked
