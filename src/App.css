@@ -1,6 +1,8 @@
 @keyframes offToOnBell {
-  from{background-color:blue}
-  to{background-color:red;}
+  /* Degrees in rotate transformations are always relative to the starting position, not the current one */
+  25%{transform:rotate(90deg);}
+  75%{transform:rotate(-90deg);}
+  100%{transform:rotate(0deg);}
 }
 #bellicon1 {
   display: block;
@@ -11,7 +13,7 @@
   animation-timing-function:linear; */
 }
 #bellicon2 {
-  display: block;
+  display: none;
   /* css animation is applied through JS
   animation-name: offToOnBell;
   animation-duration: 2s;

@@ -1,6 +1,6 @@
 import './App.css';
 import React, { useState } from 'react';
-import { IconBellRinging, IconBellRinging2Filled, IconBrandGithub, IconBrandPinterest, IconCloudLockOpen, IconSettings, IconPower, IconLock, IconCheck, IconBrandTwitter, IconX } from '@tabler/icons-react'
+import { IconBellRinging, IconBellRingingFilled, IconBrandGithub, IconBrandPinterest, IconCloudLockOpen, IconSettings, IconPower, IconLock, IconCheck, IconBrandTwitter, IconX } from '@tabler/icons-react'
 function App() {
   // adds a locked variable and creates a function called setLocked
   const [locked, setLocked] = useState(false)
@@ -27,63 +27,77 @@ function App() {
   // Adds an event that is triggered by clicking the connected button
   const successButtonOnclick = async event => {
     // Displays the element for 7.5s then hides it again
-    document.getElementById("successAlert").style.display = "block";
-    document.getElementById("pageTitle").innerHTML = "Success!";
+    var pageTitle = document.getElementById("pageTitle");
+    var successAlert = document.getElementById("successAlert");
+    successAlert.style.display = "block";
+    pageTitle.innerHTML = "Success!";
 
     function resetAlert() {
-      document.getElementById("successAlert").style.display = "none";
-      document.getElementById("pageTitle").innerHTML = "tabler-example";
+      successAlert.style.display = "none";
+      pageTitle.innerHTML = "tabler-example";
     }
     // Sets code to execute after 7500ms
     setTimeout(resetAlert, 7500);
   }
   const warningButtonOnclick = async event => {
-    document.getElementById("warningAlert").style.display = "block";
-    document.getElementById("pageTitle").innerHTML = "uh oh....";
+    var pageTitle = document.getElementById("pageTitle");
+    var warningAlert = document.getElementById("warningAlert");
+    warningAlert.style.display = "block";
+    pageTitle.innerHTML = "uh oh....";
     function resetAlert() {
-      document.getElementById("warningAlert").style.display = "none";
-      document.getElementById("pageTitle").innerHTML = "tabler-example";
+      warningAlert.style.display = "none";
+      pageTitle.innerHTML = "tabler-example";
     }
     setTimeout(resetAlert, 7500);
   }
   const dangerButtonOnclick = async event => {
-    document.getElementById("dangerAlert").style.display = "block";
-    document.getElementById("pageTitle").innerHTML = "dangerous thing";
+    var dangerAlert = document.getElementById("dangerAlert");
+    var pageTitle = document.getElementById("pageTitle");
+    dangerAlert.style.display = "block";
+    pageTitle.innerHTML = "dangerous thing";
     function resetAlert() {
-      document.getElementById("dangerAlert").style.display = "none";
-      document.getElementById("pageTitle").innerHTML = "tabler-example";
+      dangerAlert.style.display = "none";
+      pageTitle.innerHTML = "tabler-example";
     }
     setTimeout(resetAlert, 7500);
   }
   const infoButtonOnclick = async event => {
-    document.getElementById("infoAlert").style.display = "block";
-    document.getElementById("pageTitle").innerHTML = "informational tab";
+    var infoAlert = document.getElementById("infoAlert");
+    var pageTitle = document.getElementById("pageTitle");
+    infoAlert.style.display = "block";
+    pageTitle.innerHTML = "informational tab";
     function resetAlert() {
-      document.getElementById("infoAlert").style.display = "none";
-      document.getElementById("pageTitle").innerHTML = "tabler-example";
+      infoAlert.style.display = "none";
+      pageTitle.innerHTML = "tabler-example";
     }
     setTimeout(resetAlert, 7500);
   }
   const offToOnTransition = async event => {
     if (!animRunning) {
+      var bellicon1 = document.getElementById("bellicon1")
       setAnimRunning(true);
-      document.getElementById("bellicon1").style.animation = "offToOnBell 2s linear 0s 1 normal"
+      bellicon1.style.animation = "offToOnBell 1.75s linear 0s 1 normal"
       function resetAnim() {
-        document.getElementById("bellicon1").style.animation = "";
+        bellicon1.style.animation = "";
+        bellicon1.style.display = "none";
+        document.getElementById("bellicon2").style.display = "block";
         setAnimRunning(false);
       }
-      setTimeout(resetAnim, "2000");
+      setTimeout(resetAnim, "1750");
     }
   }
   const onToOffTransition = async event => {
     if (!animRunning) {
+      var bellicon2 = document.getElementById("bellicon2")
       setAnimRunning(true);
-      document.getElementById("bellicon2").style.animation = "offToOnBell 2s linear 0s 1 reverse"
+      bellicon2.style.animation = "offToOnBell 1.75s linear 0s 1 reverse"
       function resetAnim() {
-        document.getElementById("bellicon2").style.animation = "";
+        bellicon2.style.animation = "";
+        bellicon2.style.display = "none";
+        document.getElementById("bellicon1").style.display = "block";
         setAnimRunning(false);
       }
-      setTimeout(resetAnim, "2000");
+      setTimeout(resetAnim, "1750");
     }
   }
   // {locked
@@ -125,7 +139,7 @@ function App() {
         </div>
         <div className="center">
           <a onClick={offToOnTransition}><IconBellRinging id="bellicon1" onClick={offToOnTransition}></IconBellRinging></a>
-          <a onClick={onToOffTransition}><IconBellRinging2Filled id="bellicon2" onClick={onToOffTransition}></IconBellRinging2Filled></a>
+          <a onClick={onToOffTransition}><IconBellRingingFilled id="bellicon2" onClick={onToOffTransition}></IconBellRingingFilled></a>
         </div>
         <button className="btn btn-success btn-lg button1" onClick={successButtonOnclick}>Click me! successful large button</button>
         <button className="btn btn-warning btn-sm w-25 button2" onClick={warningButtonOnclick}>Click me! warning small button</button>
