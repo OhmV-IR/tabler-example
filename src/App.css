@@ -1,26 +1,22 @@
 @keyframes offToOnBell {
-
-}
-@keyframes onToOffBell {
-
-}
-#bellicon1transition {
-  display: none;
-  animation-name: offToOnBell;
-  animation-duration: 2s;
-  animation-timing-function: transitionFunction1;
-}
-#bellicon2transition {
-  display: none;
-  animation-name: onToOffBell;
-  animation-duration: 2s;
-  animation-timing-function: transitionFunction2;
+  from{background-color:blue}
+  to{background-color:red;}
 }
 #bellicon1 {
   display: block;
+  /* css animation that is applied through JS
+  animation-name: offToOnBell;
+  animation-duration: 2s;
+  animation-direction:normal;
+  animation-timing-function:linear; */
 }
 #bellicon2 {
   display: block;
+  /* css animation is applied through JS
+  animation-name: offToOnBell;
+  animation-duration: 2s;
+  animation-direction:reverse;
+  animation-timing-function:linear; */
 }
 .card-size-define {
   width:300px;
