@@ -1,11 +1,13 @@
 import './App.css';
 import { Analytics } from '@vercel/analytics/react';
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
+import ApexCharts from 'apexcharts'
 import { IconBellRinging, IconBellRingingFilled, IconBrandGithub, IconBrandPinterest, IconCloudLockOpen, IconSettings, IconPower, IconLock, IconCheck, IconBrandTwitter, IconX } from '@tabler/icons-react'
 function App() {
   // adds a locked variable and creates a function called setLocked
   const [locked, setLocked] = useState(false)
   const [animRunning, setAnimRunning] = useState(false);
+  const [chartDisplayed, setChartDisplayed] = useState(false);
   const triggerLock = async event => {
     //code to lock here
     // setLocked function is created by react and input true/false to change the global variable
@@ -17,6 +19,28 @@ function App() {
       lockingDiv[i].style.display = "none";
     }
   }
+  useEffect(() => {
+    console.log("executed only once!");
+    if(!chartDisplayed){
+    console.log("display chart");
+    var options = {
+      chart: {
+        type: 'bar'
+      },
+      series: [{
+        name: 'sales',
+        data: [30,40,45,50,49,60,70,91,125]
+      }],
+      xaxis: {
+        categories: [1991,1992,1993,1994,1995,1996,1997, 1998,1999]
+      }
+    }
+    var chart = new ApexCharts(document.querySelector("#chart"), options);
+    chart.render();
+    setChartDisplayed(true);
+  }
+  // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [""]);
   const triggerUnlock = async event => {
     // code to unlock here
     await setLocked(false);
@@ -101,6 +125,7 @@ function App() {
       setTimeout(resetAnim, "1750");
     }
   }
+
   // {locked
   // ? yes condition html goes here
   // : no condition html goes here}
@@ -129,6 +154,7 @@ function App() {
               <div id="dangerAlert" className="alert alert-danger" role="alert">Danger! World is ending in 30 seconds!!!</div>
               <div id="infoAlert" className="alert alert-info" role="alert">Info: This is a very cool website built by @OhmVIR</div>
             </div></div></div></div><div className="lockingDiv">
+            <div id="chart"></div>
         <div className="leftAlign">
           <p>Using the <a href="https://www.github.com/tabler/tabler" target="_blank" rel="noreferrer">tabler package,</a> you can add icons representing brands and other actions to your website</p>
           <a href="https://www.pinterest.com" target="_blank" rel="noreferrer"><IconBrandPinterest className="text-pinterest-red"></IconBrandPinterest></a>
@@ -149,6 +175,7 @@ function App() {
         <button className="btn btn-info w-25 button4" onClick={infoButtonOnclick}>Click me! I give info 25w button</button>
         <button className="btn btn-outline-success w-25 button5">This is an outlined button</button>
         <button className="btn btn-outline-dark w-25 button6">This is a ghost button</button>
+        <h4>Post tags(multiple colors, shapes .etc offered)<span class="badge bg-red text-white">Bug</span></h4>
         <a href="https://facebook.com" target="_blank" rel="noreferrer"><button className="btn btn-square btn-azure w-25 button7">
           <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-brand-facebook-filled" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
             <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>

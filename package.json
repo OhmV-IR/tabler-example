@@ -13,7 +13,8 @@
     "@tabler/icons-react": "^2.35.0",
     "@tabler/core": "^1.0.0-beta20",
     "@babel/plugin-proposal-private-property-in-object": "^7.21.11",
-    "@vercel/analytics": "^1.0.2"
+    "@vercel/analytics": "^1.0.2",
+    "apexcharts": "^3.44.0"
   },
   "devDependencies": {
     "@babel/plugin-proposal-private-property-in-object": "^7.21.11"

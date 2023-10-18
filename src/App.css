@@ -24,6 +24,14 @@
   width:300px;
   height:50px;
 }
+#chart {
+  position:absolute;
+  right:15vw;
+  top:30vh;
+  width:30vw;
+  height:40vh;
+  background-color:blue;
+}
 .bottom {
   height:100px;
   position:absolute;
