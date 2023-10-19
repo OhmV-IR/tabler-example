@@ -3,26 +3,9 @@ import { Analytics } from '@vercel/analytics/react';
 import React, { useState, useEffect } from 'react';
 import ApexCharts from 'apexcharts'
 import { IconBellRinging, IconBellRingingFilled, IconBrandGithub, IconBrandPinterest, IconCloudLockOpen, IconSettings, IconPower, IconLock, IconCheck, IconBrandTwitter, IconX } from '@tabler/icons-react'
+
 function App() {
-  // adds a locked variable and creates a function called setLocked
-  const [locked, setLocked] = useState(false)
-  const [animRunning, setAnimRunning] = useState(false);
-  const [chartDisplayed, setChartDisplayed] = useState(false);
-  const triggerLock = async event => {
-    //code to lock here
-    // setLocked function is created by react and input true/false to change the global variable
-    await setLocked(true);
-    // getElementsByClassName returns all the elemenets in an array so the for loop
-    // iterates over them and hides each one
-    var lockingDiv = document.getElementsByClassName("lockingDiv");
-    for (let i = 0; i < lockingDiv.length; i++) {
-      lockingDiv[i].style.display = "none";
-    }
-  }
   useEffect(() => {
-    console.log("executed only once!");
-    if(!chartDisplayed){
-    console.log("display chart");
     var options = {
       chart: {
         type: 'bar'
@@ -37,10 +20,22 @@ function App() {
     }
     var chart = new ApexCharts(document.querySelector("#chart"), options);
     chart.render();
-    setChartDisplayed(true);
+    console.log('display chart(this code only runs once)');
+  }, []);
+  // adds a locked variable and creates a function called setLocked
+  const [locked, setLocked] = useState(false)
+  const [animRunning, setAnimRunning] = useState(false);
+  const triggerLock = async event => {
+    //code to lock here
+    // setLocked function is created by react and input true/false to change the global variable
+    await setLocked(true);
+    // getElementsByClassName returns all the elemenets in an array so the for loop
+    // iterates over them and hides each one
+    var lockingDiv = document.getElementsByClassName("lockingDiv");
+    for (let i = 0; i < lockingDiv.length; i++) {
+      lockingDiv[i].style.display = "none";
+    }
   }
-  // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [""]);
   const triggerUnlock = async event => {
     // code to unlock here
     await setLocked(false);
@@ -136,6 +131,7 @@ function App() {
   Very cool button(hover on me)
 </button>
   */
+
   return (
     <>
     <Analytics></Analytics>
