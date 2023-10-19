@@ -20,7 +20,7 @@ function App() {
     }
     var chart = new ApexCharts(document.querySelector("#chart"), options);
     chart.render();
-    console.log('display chart(this code only runs once)');
+    console.log('display chart(this code only runs once in production, it will run twice and display 2 charts in a development environment / build)');
   }, []);
   // adds a locked variable and creates a function called setLocked
   const [locked, setLocked] = useState(false)
@@ -179,15 +179,38 @@ function App() {
           </svg>
           square button Facebook</button></a>
         <button className="btn btn-pill btn-lime button8 w-25">This is a lime pill button</button>
-        <div className="bottom">
-          <div className="card-size-define card">
-            <div className="img-responsive img-responsive card-img-top" id="placeholder-image"></div>
-            <div className="card-body">
-              <h3 className="card-title">Card with title and image</h3>
-              <p className="text-secondary">This is a card</p>
-            </div>
-          </div>
-        </div>
+        <div id="carouselContainer">
+        <div id="carouselExampleIndicators" className="carousel slide">
+  <div className="carousel-indicators">
+    <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" className="active" aria-current="true" aria-label="Slide 1"></button>
+    <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Slide 2"></button>
+    <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2" aria-label="Slide 3"></button>
+    <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="3" aria-label="Slide 4"></button>
+  </div>
+  <div className="carousel-inner">
+    <div className="carousel-item active">
+    <img src="https://picsum.photos/600" className="d-block" alt="A filler generated from lorem picsum"></img>
+    </div>
+    <div className="carousel-item">
+    <img src="https://picsum.photos/600" className="d-block" alt="A filler generated from lorem picsum"></img>
+    </div>
+    <div className="carousel-item">
+    <img src="https://picsum.photos/600" className="d-block" alt="A filler generated from lorem picsum"></img>
+    </div>
+    <div className="carousel-item">
+      <img src="https://picsum.photos/600" className="d-block" alt="A filler generated from lorem picsum"></img>
+    </div>
+  </div>
+  <button className="carousel-control-prev" type="button" id="sideButton1" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
+    <span className="carousel-control-prev-icon" aria-hidden="true"></span>
+    <span className="visually-hidden">Previous</span>
+  </button>
+  <button className="carousel-control-next" type="button" id="sideButton2" data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
+    <span className="carousel-control-next-icon" aria-hidden="true"></span>
+    <span className="visually-hidden">Next</span>
+  </button>
+</div>
+</div>
       </div></>
   );
 }
