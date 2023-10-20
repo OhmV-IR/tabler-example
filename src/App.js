@@ -210,6 +210,13 @@ function App() {
     <span class="visually-hidden">Next</span>
   </button>
 </div>
+<div id="textImageCard" class="card">
+  <div id="cardImage" class="img-responsive img-responsive-21x9 card-img-top"></div>
+  <div class="card-body">
+    <h3 class="card-title">Card with title and image</h3>
+    <p class="text-secondary">You can use this section of the card to describe the photo or to give a summary of other content. To the right of this card is an image carousel that can show a collection of images to the user while saving space. </p>
+  </div>
+</div>
  </div></>
   );
 }
