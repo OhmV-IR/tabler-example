@@ -69,6 +69,12 @@
 #successAlert {
   display: none;
 }
+#progressBar {
+  width:300px;
+}
+#progressBarFilled {
+  width:25%;
+}
 #warningAlert {
   display: none;
 }
@@ -127,11 +133,31 @@
 #item9 {
   position:absolute;
   top:77.25vh;
-  left:0vw;
+  left:3px;
+}
+#progressBarExplanation {
+  position:absolute;
+  left:35.75vw;
+  top: 24.85vh;
+}
+#spinningLoading {
+  position:absolute;
+  left:40.5vw;
+  top:30vh;
+}
+#progressBar {
+  position:absolute;
+  left:27vw;
+  top:37vh;
+  width:375px;
+}
+#progressBarFilled {
+ width:0%;
 }
 .center {
-  margin-left: 45%;
-  padding: 10px;
+  position:absolute;
+  left:40.5vw;
+  top:20vh;
 }
 .topRightCorner {
   position:absolute;

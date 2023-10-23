@@ -4,6 +4,19 @@ import React, { useState, useEffect } from 'react';
 import ApexCharts from 'apexcharts'
 import { IconBellRinging, IconBellRingingFilled, IconBrandFacebookFilled, IconBrandGithub, IconBrandPinterest, IconCloudLockOpen, IconSettings, IconPower, IconLock, IconCheck, IconBrandTwitter, IconX } from '@tabler/icons-react'
 
+/* TODO:
+- Make card scale with screen res
+*/
+
+/*
+          <h4 id="progressBarExplanation">Arbitrary progress bars</h4>
+          <div id="progressBar" className="progress">
+            <div id="progressBarFilled" className="progress-bar bg-green" role="progressbar" aria-valuenow="25" aria-valuemin="0" aria-valuemax="50" aria-label="50% Complete">
+              <span>25%</span>
+            </div>
+          </div>
+          <div id="spinningLoading" className="spinner-border text-purple"></div>
+        */
 function App() {
   useEffect(() => {
     var options = {
@@ -20,7 +33,30 @@ function App() {
     }
     var chart = new ApexCharts(document.querySelector("#chart"), options);
     chart.render();
+    var percentage = 0;
+    var mode = true;
     console.log('display chart(this code only runs once in production, it will run twice and display 2 charts in a development environment / build)');
+    function progressBarSet() {
+      if (percentage == 100) {
+        console.log("change");
+        mode = false;
+      }
+      if(percentage == 0){
+        console.log("change");
+        mode = true;
+      }
+        if(mode == true){
+          console.log("add");
+          percentage = percentage + 1; 
+        } 
+        if(mode == false){
+          console.log("remove");
+          percentage = percentage - 1;
+        }
+      document.getElementById("progressBarFilled").style.width = String(percentage) + "%";
+      document.getElementById("insideProgressBarText").innerHTML = String(percentage) + "%";
+    }
+    setInterval(progressBarSet, 75)
   }, []);
   // adds a locked variable and creates a function called setLocked
   const [locked, setLocked] = useState(false)
@@ -165,6 +201,14 @@ function App() {
           <a onClick={offToOnTransition}><IconBellRinging id="bellicon1" onClick={offToOnTransition}></IconBellRinging></a>
           <a onClick={onToOffTransition}><IconBellRingingFilled id="bellicon2" onClick={onToOffTransition}></IconBellRingingFilled></a>
         </div>
+        <div className="progressBars">
+          <h4 id="progressBarExplanation">Arbitrary progress bars</h4>
+          <div id="progressBar" className="progress">
+            <div id="progressBarFilled" className="progress-bar bg-green" role="progressbar" aria-valuenow="25" aria-valuemin="0" aria-valuemax="50" aria-label="50% Complete">
+              <span id="insideProgressBarText">0%</span>
+            </div>
+          </div>
+          <div id="spinningLoading" className="spinner-border text-purple"></div></div>
         <button id="item1" type="button" className="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
           Launch alert modal
         </button>
@@ -203,13 +247,13 @@ function App() {
         <button id="item5" className="btn btn-info w-25" onClick={infoButtonOnclick}>Click me! I give info 25w button</button>
         <button id="item6" className="btn btn-outline-dark w-25">This is an outlined button</button>
         <button id="item7" className="btn btn-pill btn-lime w-25">This is a lime pill button</button>
-        <button id="item8" type="button" class="btn btn-danger w-25">
-        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-link" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
-   <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
-   <path d="M9 15l6 -6"></path>
-   <path d="M11 6l.463 -.536a5 5 0 0 1 7.071 7.072l-.534 .464"></path>
-   <path d="M13 18l-.397 .534a5.068 5.068 0 0 1 -7.127 0a4.972 4.972 0 0 1 0 -7.071l.524 -.463"></path>
-</svg>
+        <button id="item8" type="button" className="btn btn-danger w-25">
+          <svg xmlns="http://www.w3.org/2000/svg" className="icon icon-tabler icon-tabler-link" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+            <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+            <path d="M9 15l6 -6"></path>
+            <path d="M11 6l.463 -.536a5 5 0 0 1 7.071 7.072l-.534 .464"></path>
+            <path d="M13 18l-.397 .534a5.068 5.068 0 0 1 -7.127 0a4.972 4.972 0 0 1 0 -7.071l.524 -.463"></path>
+          </svg>
           Share link
         </button>
         <h4 id="item9">Post tags(multiple colors, shapes .etc offered)<span className="badge bg-red text-white">Bug</span></h4>
