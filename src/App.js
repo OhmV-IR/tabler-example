@@ -2,7 +2,7 @@ import './App.css';
 import { Analytics } from '@vercel/analytics/react';
 import React, { useState, useEffect } from 'react';
 import ApexCharts from 'apexcharts'
-import { IconBellRinging, IconBellRingingFilled, IconBrandGithub, IconBrandPinterest, IconCloudLockOpen, IconSettings, IconPower, IconLock, IconCheck, IconBrandTwitter, IconX } from '@tabler/icons-react'
+import { IconBellRinging, IconBellRingingFilled, IconBrandFacebookFilled, IconBrandGithub, IconBrandPinterest, IconCloudLockOpen, IconSettings, IconPower, IconLock, IconCheck, IconBrandTwitter, IconX } from '@tabler/icons-react'
 
 function App() {
   useEffect(() => {
@@ -12,10 +12,10 @@ function App() {
       },
       series: [{
         name: 'sales',
-        data: [30,40,45,50,49,60,70,91,125]
+        data: [30, 40, 45, 50, 49, 60, 70, 91, 125]
       }],
       xaxis: {
-        categories: [1991,1992,1993,1994,1995,1996,1997, 1998,1999]
+        categories: [1991, 1992, 1993, 1994, 1995, 1996, 1997, 1998, 1999]
       }
     }
     var chart = new ApexCharts(document.querySelector("#chart"), options);
@@ -125,7 +125,7 @@ function App() {
   // ? yes condition html goes here
   // : no condition html goes here}
   /* features not working morgue lies below:
-  <button type="button" class="btn btn-primary" data-bs-trigger="hover" data-bs-toggle="popover"
+  <button type="button" className="btn btn-primary" data-bs-trigger="hover" data-bs-toggle="popover"
   title="Popover title" data-bs-content="And here's some amazing content. It's very engaging. Right?"
 >
   Very cool button(hover on me)
@@ -134,7 +134,7 @@ function App() {
 
   return (
     <>
-    <Analytics></Analytics>
+      <Analytics></Analytics>
       <title id="pageTitle">tabler-example</title>
       <div className="topRightCorner">
         {locked
@@ -150,9 +150,9 @@ function App() {
               <div id="dangerAlert" className="alert alert-danger" role="alert">Danger! World is ending in 30 seconds!!!</div>
               <div id="infoAlert" className="alert alert-info" role="alert">Info: This is a very cool website built by @OhmVIR</div>
             </div></div></div></div><div className="lockingDiv">
-            <div id="chart"></div>
+        <div id="chart"></div>
         <div className="leftAlign">
-          <p>Using the <a href="https://www.github.com/tabler/tabler" target="_blank" rel="noreferrer">tabler package,</a> you can add icons representing brands and other actions to your website</p>
+          <p >Using the <a href="https://www.github.com/tabler/tabler" target="_blank" rel="noreferrer">tabler package,</a> you can add icons representing brands and other actions to your website</p>
           <a href="https://www.pinterest.com" target="_blank" rel="noreferrer"><IconBrandPinterest className="text-pinterest-red"></IconBrandPinterest></a>
           <IconX className="text-red"></IconX>
           <IconCheck className="text-green"></IconCheck>
@@ -165,59 +165,92 @@ function App() {
           <a onClick={offToOnTransition}><IconBellRinging id="bellicon1" onClick={offToOnTransition}></IconBellRinging></a>
           <a onClick={onToOffTransition}><IconBellRingingFilled id="bellicon2" onClick={onToOffTransition}></IconBellRingingFilled></a>
         </div>
-        <button className="btn btn-success btn-lg button1" onClick={successButtonOnclick}>Click me! successful large button</button>
-        <button className="btn btn-warning btn-sm w-25 button2" onClick={warningButtonOnclick}>Click me! warning small button</button>
-        <button className="btn btn-danger w-25 button3" onClick={dangerButtonOnclick}>Click me! dangerous button 25w button</button>
-        <button className="btn btn-info w-25 button4" onClick={infoButtonOnclick}>Click me! I give info 25w button</button>
-        <button className="btn btn-outline-success w-25 button5">This is an outlined button</button>
-        <button className="btn btn-outline-dark w-25 button6">This is a ghost button</button>
-        <h4>Post tags(multiple colors, shapes .etc offered)<span class="badge bg-red text-white">Bug</span></h4>
-        <a href="https://facebook.com" target="_blank" rel="noreferrer"><button className="btn btn-square btn-azure w-25 button7">
-          <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-brand-facebook-filled" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
-            <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
-            <path d="M18 2a1 1 0 0 1 .993 .883l.007 .117v4a1 1 0 0 1 -.883 .993l-.117 .007h-3v1h3a1 1 0 0 1 .991 1.131l-.02 .112l-1 4a1 1 0 0 1 -.858 .75l-.113 .007h-2v6a1 1 0 0 1 -.883 .993l-.117 .007h-4a1 1 0 0 1 -.993 -.883l-.007 -.117v-6h-2a1 1 0 0 1 -.993 -.883l-.007 -.117v-4a1 1 0 0 1 .883 -.993l.117 -.007h2v-1a6 6 0 0 1 5.775 -5.996l.225 -.004h3z" stroke-width="0" fill="currentColor"></path>
-          </svg>
-          square button Facebook</button></a>
-        <button className="btn btn-pill btn-lime button8 w-25">This is a lime pill button</button>
-
-<div id="carouselExampleIndicators" class="carousel slide w-25">
-  <div class="carousel-indicators">
-    <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
-    <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Slide 2"></button>
-    <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2" aria-label="Slide 3"></button>
-    <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="3" aria-label="Slide 4"></button>
-  </div>
-  <div class="carousel-inner">
-    <div class="carousel-item active">
-      <img src="https://fastly.picsum.photos/id/543/480/480.jpg?hmac=hjWk0LdfnKCvicYyJas-XQXXtYCklvO13OS7ojz4BWc" class="d-block w-100" alt="A filler generated by picsum.photos"></img>
-    </div>
-    <div class="carousel-item">
-      <img src="https://fastly.picsum.photos/id/404/480/480.jpg?hmac=MlYra3lkNTPqvjE9tPnGRT_pC9rVVfamNHuD69rvU4s" class="d-block w-100" alt="A filler generated by picsum.photos"></img>
-    </div>
-    <div class="carousel-item">
-      <img src="https://fastly.picsum.photos/id/741/480/480.jpg?hmac=sfNc--VFcciAV8MYR4eX2U7QKuDkMDddoZ1qyHoeqoI" class="d-block w-100" alt="A filler generated by picsum.photos"></img>
-    </div>
-    <div class="carousel-item">
-      <img src="https://fastly.picsum.photos/id/1038/480/480.jpg?hmac=iXoWj2oNoc3qoo7qNkG7jaqxdQzjZ3Ov2eBOVSccp4A" class="d-block w-100" alt="A filler generated by picsum.photos"></img>
-    </div>
-  </div>
-  <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
-    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-    <span class="visually-hidden">Previous</span>
-  </button>
-  <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
-    <span class="carousel-control-next-icon" aria-hidden="true"></span>
-    <span class="visually-hidden">Next</span>
-  </button>
-</div>
-<div id="textImageCard" class="card">
-  <div id="cardImage" class="img-responsive img-responsive-21x9 card-img-top"></div>
-  <div class="card-body">
-    <h3 class="card-title">Card with title and image</h3>
-    <p class="text-secondary">You can use this section of the card to describe the photo or to give a summary of other content. To the right of this card is an image carousel that can show a collection of images to the user while saving space. </p>
-  </div>
-</div>
- </div></>
+        <button id="item1" type="button" className="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
+          Launch alert modal
+        </button>
+        <div className="modal" id="exampleModal" tabindex="-1">
+          <div className="modal-dialog modal-sm" role="document">
+            <div className="modal-content">
+              <button type="button" className="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+              <div className="modal-status bg-danger"></div>
+              <div className="modal-body text-center py-4">
+                <svg xmlns="http://www.w3.org/2000/svg" className="icon mb-2 text-danger icon-lg" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                  <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                  <path d="M12 9v2m0 4v.01" />
+                  <path d="M5 19h14a2 2 0 0 0 1.84 -2.75l-7.1 -12.25a2 2 0 0 0 -3.5 0l-7.1 12.25a2 2 0 0 0 1.75 2.75" />
+                </svg>
+                <h3>Are you sure?</h3>
+                <div className="text-secondary" id="modalPrompt">Do you really want to remove 84 files? This cannot be reversed.</div>
+              </div>
+              <div className="modal-footer">
+                <div className="w-100">
+                  <div className="row">
+                    <div className="col"><a href="#" className="btn w-100" data-bs-dismiss="modal">
+                      Cancel
+                    </a></div>
+                    <div className="col"><a href="#" id="okText" className="btn btn-danger w-100" data-bs-dismiss="modal">
+                      Delete 84 items
+                    </a></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <button id="item2" className="btn btn-success btn-lg" onClick={successButtonOnclick}>Click me! successful large button</button>
+        <button id="item3" className="btn btn-warning btn-sm w-25" onClick={warningButtonOnclick}>Click me! warning small button</button>
+        <button id="item4" className="btn btn-danger w-25" onClick={dangerButtonOnclick}>Click me! dangerous button 25w button</button>
+        <button id="item5" className="btn btn-info w-25" onClick={infoButtonOnclick}>Click me! I give info 25w button</button>
+        <button id="item6" className="btn btn-outline-dark w-25">This is an outlined button</button>
+        <button id="item7" className="btn btn-pill btn-lime w-25">This is a lime pill button</button>
+        <button id="item8" type="button" class="btn btn-danger w-25">
+        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-link" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+   <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+   <path d="M9 15l6 -6"></path>
+   <path d="M11 6l.463 -.536a5 5 0 0 1 7.071 7.072l-.534 .464"></path>
+   <path d="M13 18l-.397 .534a5.068 5.068 0 0 1 -7.127 0a4.972 4.972 0 0 1 0 -7.071l.524 -.463"></path>
+</svg>
+          Share link
+        </button>
+        <h4 id="item9">Post tags(multiple colors, shapes .etc offered)<span className="badge bg-red text-white">Bug</span></h4>
+        <div id="carouselExampleIndicators" className="carousel slide w-25">
+          <div className="carousel-indicators">
+            <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" className="active" aria-current="true" aria-label="Slide 1"></button>
+            <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Slide 2"></button>
+            <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2" aria-label="Slide 3"></button>
+            <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="3" aria-label="Slide 4"></button>
+          </div>
+          <div className="carousel-inner">
+            <div className="carousel-item active">
+              <img src="https://fastly.picsum.photos/id/543/480/480.jpg?hmac=hjWk0LdfnKCvicYyJas-XQXXtYCklvO13OS7ojz4BWc" className="d-block w-100" alt="A filler generated by picsum.photos"></img>
+            </div>
+            <div className="carousel-item">
+              <img src="https://fastly.picsum.photos/id/404/480/480.jpg?hmac=MlYra3lkNTPqvjE9tPnGRT_pC9rVVfamNHuD69rvU4s" className="d-block w-100" alt="A filler generated by picsum.photos"></img>
+            </div>
+            <div className="carousel-item">
+              <img src="https://fastly.picsum.photos/id/741/480/480.jpg?hmac=sfNc--VFcciAV8MYR4eX2U7QKuDkMDddoZ1qyHoeqoI" className="d-block w-100" alt="A filler generated by picsum.photos"></img>
+            </div>
+            <div className="carousel-item">
+              <img src="https://fastly.picsum.photos/id/1038/480/480.jpg?hmac=iXoWj2oNoc3qoo7qNkG7jaqxdQzjZ3Ov2eBOVSccp4A" className="d-block w-100" alt="A filler generated by picsum.photos"></img>
+            </div>
+          </div>
+          <button className="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
+            <span className="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span className="visually-hidden">Previous</span>
+          </button>
+          <button className="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
+            <span className="carousel-control-next-icon" aria-hidden="true"></span>
+            <span className="visually-hidden">Next</span>
+          </button>
+        </div>
+        <div id="textImageCard" className="card">
+          <div id="cardImage" className="img-responsive img-responsive-21x9 card-img-top"></div>
+          <div className="card-body">
+            <h3 className="card-title">Card with title and image</h3>
+            <p className="text-secondary">Secondary text attached to card</p>
+          </div>
+        </div>
+      </div></>
   );
 }
 // Most of the HTML uses predefined css classes that are in app.css and can be found at github.com/tabler/tabler

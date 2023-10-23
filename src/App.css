@@ -17,6 +17,12 @@
   right:25vw;
   bottom:0px;
 }
+#okText {
+  color:#ffffffff;
+}
+#modalPrompt {
+  color:var(--tblr-red-darken) !important;
+}
 #bellicon1 {
   display: block;
   /* css animation that is applied through JS
@@ -78,53 +84,50 @@
 .leftAlign {
   margin-left: 2%;
 }
-.button1 {
+#item1 {
   position:absolute;
-  float:left;
-  top:35%;
-  left:0%;
+  top:25vh;
+  left:0vw;
 }
-.button2 {
+#item2 {
   position:absolute;
-  float:left;
-  top:42.5%;
-  left:0%;
+  top:31.5vh;
+  left:0vw;
 }
-.button3 {
+#item3 {
   position:absolute;
-  float:left;
-  top:46%;
-  left:0%;
+  top:39.5vh;
+  left:0vw;
 }
-.button4 {
+#item4 {
   position:absolute;
-  float:left;
-  top:52%;
-  left:0%;
+  top:43.55vh;
+  left:0vw;
 }
-.button5 {
+#item5 {
   position:absolute;
-  float:left;
-  top:58%;
-  left:0%;
+  top:50vh;
+  left:0vw;
 }
-.button6 {
+#item6 {
   position:absolute;
-  float:left;
-  top:64%;
-  left:0%;
+  top:56.65vh;
+  left:0vw;
 }
-.button7 {
+#item7 {
   position:absolute;
-  float:left;
-  top:70%;
-  left:0%;
+  top:63.25vh;
+  left:0vw;
 }
-.button8 {
+#item8 {
   position:absolute;
-  float:left;
-  top:76.25%;
-  left:0%;
+  top:70vh;
+  left:0vw;
+}
+#item9 {
+  position:absolute;
+  top:77.25vh;
+  left:0vw;
 }
 .center {
   margin-left: 45%;
