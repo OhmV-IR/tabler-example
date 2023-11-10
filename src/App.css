@@ -12,10 +12,27 @@
   width:341px;
   height:341px;
 }
+#datagrid {
+  position:absolute;
+  display:none;
+  width:15vw;
+  height:fit-content;
+  left:85vw;
+  top:5vh;
+  z-index: 2;
+}
+#ytLink {
+  color:var(--tblr-blue-darken);
+}
 #avatarPicture {
   position:absolute;
   left: 97vw;
   top:0.5vh;
+  width:4.5vh;
+  height:4.5vh;
+}
+#avatarPicture:hover {
+  cursor:pointer;
 }
 #textImageCard {
   position:absolute;
@@ -170,6 +187,12 @@
   right:2.25vw;
   width:50px;
   height:50px;
+}
+#stepsLoading {
+  position:absolute;
+  width:34.5vw;
+  left:23.25vw;
+  top:45vh;
 }
 .text-black {
   color:#000000;

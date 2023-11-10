@@ -38,19 +38,15 @@ function App() {
     console.log('display chart(this code only runs once in production, it will run twice and display 2 charts in a development environment / build)');
     function progressBarSet() {
       if (percentage == 100) {
-        console.log("change");
         mode = false;
       }
       if(percentage == 0){
-        console.log("change");
         mode = true;
       }
         if(mode == true){
-          console.log("add");
           percentage = percentage + 1; 
         } 
         if(mode == false){
-          console.log("remove");
           percentage = percentage - 1;
         }
       document.getElementById("progressBarFilled").style.width = String(percentage) + "%";
@@ -156,7 +152,15 @@ function App() {
       setTimeout(resetAnim, "1750");
     }
   }
-
+  const toggleDatagrid = async event => {
+    var datagrid = document.getElementById("datagrid");
+    if(datagrid.style.display == "block"){
+      datagrid.style.display = "none";
+    }
+    else if(datagrid.style.display == "none"){
+      datagrid.style.display = "block";
+    }
+  }
   // {locked
   // ? yes condition html goes here
   // : no condition html goes here}
@@ -186,7 +190,36 @@ function App() {
               <div id="dangerAlert" className="alert alert-danger" role="alert">Danger! World is ending in 30 seconds!!!</div>
               <div id="infoAlert" className="alert alert-info" role="alert">Info: This is a very cool website built by @OhmVIR</div>
             </div></div></div></div><div className="lockingDiv">
-            <span className="avatar bg-purple-lt" id="avatarPicture"><span className="badge bg-success"></span>AB</span>
+            <span className="avatar bg-purple-lt" id="avatarPicture" onClick={toggleDatagrid}><span className="badge bg-success"></span>AB</span>
+            <div className="datagrid" id="datagrid">
+  <div className="datagrid-item">
+    <div className="datagrid-title">Full name</div>
+    <div className="datagrid-content">-</div>
+  </div>
+  <div className="datagrid-item">
+    <div className="datagrid-title">Username</div>
+    <div className="datagrid-content">OhmVIR</div>
+  </div>
+  <div className="datagrid-item">
+    <div className="datagrid-title">Date of birth</div>
+    <div className="datagrid-content">December 26th</div>
+  </div>
+  <div className="datagrid-item">
+    <div className="datagrid-title">Account status</div>
+    <div className="datagrid-content">
+      <span className="status status-green">
+        Active
+      </span>
+    </div>
+  </div>
+  <div className="datagrid-item">
+    <div className="datagrid-title">Account bio</div>
+    <div className="datagrid-content">
+      This website was built using tabler, check out <a id="ytLink" href="https://www.youtube.com/channel/UCcdj0lxoqyWRM1dY3ixUr0A">OhmVIR's youtube channel</a> for the code review and explanation
+    </div>
+  </div>
+</div>
+
         <div id="chart"></div>
         <div className="leftAlign">
           <p >Using the <a href="https://www.github.com/tabler/tabler" target="_blank" rel="noreferrer">tabler package,</a> you can add icons representing brands and other actions to your website</p>
@@ -209,17 +242,31 @@ function App() {
               <span id="insideProgressBarText">0%</span>
             </div>
           </div>
+          <div className="steps" id="stepsLoading">
+  <a href="#" className="step-item" data-bs-toggle="tooltip" title="Step 1 description">
+    Step 1
+  </a>
+  <a href="#" className="step-item" data-bs-toggle="tooltip" title="Step 2 description">
+    Step 2
+  </a>
+  <a href="#" className="step-item active" data-bs-toggle="tooltip" title="Step 3 description">
+    Step 3
+  </a>
+  <span href="#" className="step-item" data-bs-toggle="tooltip" title="Step 4 description">
+    Step 4
+  </span>
+</div>
           <div id="spinningLoading" className="spinner-border text-purple"></div></div>
         <button id="item1" type="button" className="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
           Launch alert modal
         </button>
-        <div className="modal" id="exampleModal" tabindex="-1">
+        <div className="modal" id="exampleModal" tabIndex="-1">
           <div className="modal-dialog modal-sm" role="document">
             <div className="modal-content">
               <button type="button" className="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
               <div className="modal-status bg-danger"></div>
               <div className="modal-body text-center py-4">
-                <svg xmlns="http://www.w3.org/2000/svg" className="icon mb-2 text-danger icon-lg" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                <svg xmlns="http://www.w3.org/2000/svg" className="icon mb-2 text-danger icon-lg" width="24" height="24" viewBox="0 0 24 24" strokeWidth="2" stroke="currentColor" fill="none" strokeLinecap="round" strokeLinejoin="round">
                   <path stroke="none" d="M0 0h24v24H0z" fill="none" />
                   <path d="M12 9v2m0 4v.01" />
                   <path d="M5 19h14a2 2 0 0 0 1.84 -2.75l-7.1 -12.25a2 2 0 0 0 -3.5 0l-7.1 12.25a2 2 0 0 0 1.75 2.75" />
@@ -249,7 +296,7 @@ function App() {
         <button id="item6" className="btn btn-outline-dark w-25">This is an outlined button</button>
         <button id="item7" className="btn btn-pill btn-lime w-25">This is a lime pill button</button>
         <button id="item8" type="button" className="btn btn-danger w-25">
-          <svg xmlns="http://www.w3.org/2000/svg" className="icon icon-tabler icon-tabler-link" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+          <svg xmlns="http://www.w3.org/2000/svg" className="icon icon-tabler icon-tabler-link" width="24" height="24" viewBox="0 0 24 24" strokeWidth="2" stroke="currentColor" fill="none" strokeLinecap="round" strokeLinejoin="round">
             <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
             <path d="M9 15l6 -6"></path>
             <path d="M11 6l.463 -.536a5 5 0 0 1 7.071 7.072l-.534 .464"></path>
