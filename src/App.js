@@ -258,7 +258,7 @@ function App() {
 </div>
           <div id="spinningLoading" className="spinner-border text-purple"></div></div>
         <button id="item1" type="button" className="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
-          Launch alert modal
+          Edit account details(in progress TODO)
         </button>
         <div className="modal" id="exampleModal" tabIndex="-1">
           <div className="modal-dialog modal-sm" role="document">
