@@ -174,8 +174,8 @@ function App() {
       <title id="pageTitle">tabler-example</title>
       <div className="topRightCorner">
         {locked
-          ? <IconLock id="topRightIcon" onClick={triggerUnlock} />
-          : <IconCloudLockOpen id="topRightIcon" onClick={triggerLock} />}
+          ? <IconCloudLockOpen id="topRightIcon" onClick={triggerUnlock} />
+          : <IconLock id="topRightIcon" onClick={triggerLock} />}
       </div>
       <div className="page-header d-print-none">
         <div className="container-xl">
@@ -186,6 +186,7 @@ function App() {
               <div id="dangerAlert" className="alert alert-danger" role="alert">Danger! World is ending in 30 seconds!!!</div>
               <div id="infoAlert" className="alert alert-info" role="alert">Info: This is a very cool website built by @OhmVIR</div>
             </div></div></div></div><div className="lockingDiv">
+            <span className="avatar bg-purple-lt" id="avatarPicture"><span className="badge bg-success"></span>AB</span>
         <div id="chart"></div>
         <div className="leftAlign">
           <p >Using the <a href="https://www.github.com/tabler/tabler" target="_blank" rel="noreferrer">tabler package,</a> you can add icons representing brands and other actions to your website</p>

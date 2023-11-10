@@ -12,6 +12,11 @@
   width:341px;
   height:341px;
 }
+#avatarPicture {
+  position:absolute;
+  left: 97vw;
+  top:0.5vh;
+}
 #textImageCard {
   position:absolute;
   right:25vw;
@@ -127,7 +132,7 @@
 }
 #item8 {
   position:absolute;
-  top:70vh;
+  top:71vh;
   left:0vw;
 }
 #item9 {
@@ -161,8 +166,8 @@
 }
 .topRightCorner {
   position:absolute;
-  top:1%;
-  right:1%;
+  top:1.5vh;
+  right:2.25vw;
   width:50px;
   height:50px;
 }
