@@ -153,11 +153,12 @@ function App() {
     }
   }
   const toggleDatagrid = async event => {
+    console.log("toggle datagrid function ran")
     var datagrid = document.getElementById("datagrid");
     if(datagrid.style.display == "block"){
       datagrid.style.display = "none";
     }
-    else if(datagrid.style.display == "none"){
+    else {
       datagrid.style.display = "block";
     }
   }
