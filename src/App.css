@@ -14,7 +14,7 @@
 }
 #datagrid {
   position:absolute;
-  display:none;
+  display:block;
   width:15vw;
   height:fit-content;
   left:85vw;
