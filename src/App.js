@@ -222,19 +222,19 @@ function App() {
             </div></div></div></div><div className="lockingDiv">
             <span className="avatar bg-purple-lt" id="avatarPicture" onClick={toggleDatagrid}><span className="badge bg-success"></span>AB</span>
             <div className="datagrid" id="datagrid">
-  <div className="datagrid-item">
+  <div className="datagrid-item" id="datagridItem1">
     <div className="datagrid-title">Full name</div>
     <div className="datagrid-content" id="fullNameDatagrid">-</div>
   </div>
-  <div className="datagrid-item">
+  <div className="datagrid-item" id="datagridItem2">
     <div className="datagrid-title">Username</div>
     <div className="datagrid-content" id="usernameDatagrid">OhmVIR</div>
   </div>
-  <div className="datagrid-item">
+  <div className="datagrid-item" id="datagridItem3">
     <div className="datagrid-title">Date of birth(MM/DD/YYYY)</div>
     <div className="datagrid-content" id="DOBDatagrid">12/26/2008</div>
   </div>
-  <div className="datagrid-item">
+  <div className="datagrid-item" id="datagridItem4">
     <div className="datagrid-title">Account status</div>
     <div className="datagrid-content" id="statusDatagrid">
       <span className="status status-green">
@@ -243,10 +243,10 @@ function App() {
       <span className="status status-indigo">Standard</span>
     </div>
   </div>
-  <div className="datagrid-item">
+  <div className="datagrid-item" id="datagridItem5">
     <div className="datagrid-title">Account bio</div>
     <div className="datagrid-content" id="bioDatagrid">
-      This website was built using tabler, check out <a id="ytLink" href="https://www.youtube.com/channel/UCcdj0lxoqyWRM1dY3ixUr0A">OhmVIR's youtube channel</a> for the code review and explanation
+      Check out <a id="ytLink" href="https://www.youtube.com/channel/UCcdj0lxoqyWRM1dY3ixUr0A">OhmVIR's youtube channel</a> for the code review and explanation
     </div>
   </div>
 </div>

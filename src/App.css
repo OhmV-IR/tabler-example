@@ -21,6 +21,26 @@
   top:5vh;
   z-index: 2;
 }
+#datagridItem2 {
+  position:absolute;
+  left:0vw;
+  top:7vh;
+}
+#datagridItem3 {
+  position:absolute;
+  left:0vw;
+  top:14vh;
+}
+#datagridItem4 {
+  position:absolute;
+  left:0vw;
+  top:21vh;
+}
+#datagridItem5 {
+  position:absolute;
+  left:0vw;
+  top:28vh;
+}
 #ytLink {
   color:var(--tblr-blue-darken);
 }
