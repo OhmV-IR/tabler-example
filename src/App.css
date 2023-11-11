@@ -62,9 +62,6 @@
 #okText {
   color:#ffffffff;
 }
-#modalPrompt {
-  color:var(--tblr-red-darken) !important;
-}
 #bellicon1 {
   display: block;
   /* css animation that is applied through JS
