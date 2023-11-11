@@ -2,7 +2,7 @@ import './App.css';
 import { Analytics } from '@vercel/analytics/react';
 import React, { useState, useEffect } from 'react';
 import ApexCharts from 'apexcharts'
-import { IconBellRinging, IconBellRingingFilled, IconBrandFacebookFilled, IconBrandGithub, IconBrandPinterest, IconCloudLockOpen, IconSettings, IconPower, IconLock, IconCheck, IconBrandTwitter, IconX } from '@tabler/icons-react'
+import { IconBellRinging, IconBellRingingFilled, IconBrandFacebookFilled, IconBrandGithub, IconBrandPinterest, IconCloudLockOpen, IconSettings, IconPower, IconLock, IconCheck, IconBrandTwitter, IconX } from '@tabler/icons-react';
 
 /* TODO:
 - Make card scale with screen res
@@ -162,6 +162,35 @@ function App() {
       datagrid.style.display = "block";
     }
   }
+  const editAccountDetails = async event => {
+    console.log("edited account details");
+    document.getElementById("fullNameDatagrid").innerHTML = document.getElementById("formFullName").value;
+    // 0 for error, 1 for active, 2 for suspended, 3 for terminated
+    var accountState;
+    // 0 for error, 1 for standard, 2 for admin
+    var accountPermissions;
+    if(document.getElementById("formStandardAccount").checked){
+      accountPermissions = '<span class="status status-indigo">Standard</span>';
+    }
+    else {
+      accountPermissions = '<span class="status status-purple">Administrator</span>';
+    }
+    document.getElementById("avatarPicture").innerHTML = '<span class="badge bg-success"></span>' + document.getElementById("formInitials").value;
+    if(document.getElementById("formActiveAccount").checked){
+      accountState = '<span class="status status-green">Active</span>';
+    }
+    else if(document.getElementById("formSuspendedAccount").checked){
+      accountState = '<span class="status status-orange">Suspended</span>';
+    }
+    else{
+      accountState = '<span class="status status-red">Terminated</span>';
+    }
+    document.getElementById("usernameDatagrid").innerHTML = document.getElementById("formUsername").value;
+    document.getElementById("bioDatagrid").innerHTML = document.getElementById("formBio").value;
+    var dateInput = new Date(document.getElementById("formDOB").value);
+    document.getElementById("DOBDatagrid").innerHTML = String(dateInput.getMonth() + 1) + '/' + String(dateInput.getDay()) + '/' + String(dateInput.getFullYear());
+    document.getElementById("statusDatagrid").innerHTML = accountState + accountPermissions;
+  }
   // {locked
   // ? yes condition html goes here
   // : no condition html goes here}
@@ -195,27 +224,28 @@ function App() {
             <div className="datagrid" id="datagrid">
   <div className="datagrid-item">
     <div className="datagrid-title">Full name</div>
-    <div className="datagrid-content">-</div>
+    <div className="datagrid-content" id="fullNameDatagrid">-</div>
   </div>
   <div className="datagrid-item">
     <div className="datagrid-title">Username</div>
-    <div className="datagrid-content">OhmVIR</div>
+    <div className="datagrid-content" id="usernameDatagrid">OhmVIR</div>
   </div>
   <div className="datagrid-item">
-    <div className="datagrid-title">Date of birth</div>
-    <div className="datagrid-content">December 26th</div>
+    <div className="datagrid-title">Date of birth(MM/DD/YYYY)</div>
+    <div className="datagrid-content" id="DOBDatagrid">12/26/2008</div>
   </div>
   <div className="datagrid-item">
     <div className="datagrid-title">Account status</div>
-    <div className="datagrid-content">
+    <div className="datagrid-content" id="statusDatagrid">
       <span className="status status-green">
         Active
       </span>
+      <span className="status status-indigo">Standard</span>
     </div>
   </div>
   <div className="datagrid-item">
     <div className="datagrid-title">Account bio</div>
-    <div className="datagrid-content">
+    <div className="datagrid-content" id="bioDatagrid">
       This website was built using tabler, check out <a id="ytLink" href="https://www.youtube.com/channel/UCcdj0lxoqyWRM1dY3ixUr0A">OhmVIR's youtube channel</a> for the code review and explanation
     </div>
   </div>
@@ -258,38 +288,108 @@ function App() {
   </span>
 </div>
           <div id="spinningLoading" className="spinner-border text-purple"></div></div>
-        <button id="item1" type="button" className="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
-          Edit account details(in progress TODO)
-        </button>
-        <div className="modal" id="exampleModal" tabIndex="-1">
-          <div className="modal-dialog modal-sm" role="document">
-            <div className="modal-content">
-              <button type="button" className="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-              <div className="modal-status bg-danger"></div>
-              <div className="modal-body text-center py-4">
-                <svg xmlns="http://www.w3.org/2000/svg" className="icon mb-2 text-danger icon-lg" width="24" height="24" viewBox="0 0 24 24" strokeWidth="2" stroke="currentColor" fill="none" strokeLinecap="round" strokeLinejoin="round">
-                  <path stroke="none" d="M0 0h24v24H0z" fill="none" />
-                  <path d="M12 9v2m0 4v.01" />
-                  <path d="M5 19h14a2 2 0 0 0 1.84 -2.75l-7.1 -12.25a2 2 0 0 0 -3.5 0l-7.1 12.25a2 2 0 0 0 1.75 2.75" />
-                </svg>
-                <h3>Are you sure?</h3>
-                <div className="text-secondary" id="modalPrompt">Do you really want to remove 84 files? This cannot be reversed.</div>
-              </div>
-              <div className="modal-footer">
-                <div className="w-100">
-                  <div className="row">
-                    <div className="col"><a href="#" className="btn w-100" data-bs-dismiss="modal">
-                      Cancel
-                    </a></div>
-                    <div className="col"><a href="#" id="okText" className="btn btn-danger w-100" data-bs-dismiss="modal">
-                      Delete 84 items
-                    </a></div>
-                  </div>
-                </div>
+        <button type="button" id="item1" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
+  Edit account details
+</button>
+<div class="modal" id="exampleModal" tabindex="-1">
+  <div class="modal-dialog modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title">Account details</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <div class="mb-3">
+          <label class="form-label">Name</label>
+          <input type="text" class="form-control" name="example-text-input" placeholder="Your full name" id="formFullName" />
+        </div>
+        <label class="form-label">Account type</label>
+        <div class="form-selectgroup-boxes row mb-3">
+          <div class="col-md-6">
+            <label class="form-selectgroup-item">
+              <input type="radio" name="report-type" value="1" class="form-selectgroup-input" checked id="formStandardAccount" />
+              <span class="form-selectgroup-label d-flex align-items-center p-3">
+                <span class="me-3">
+                  <span class="form-selectgroup-check"></span>
+                </span>
+                <span class="form-selectgroup-label-content">
+                  <span class="form-selectgroup-title strong mb-1">Standard</span>
+                  <span class="d-block text-secondary">Only have basic access and permissions. *This does not actually change anything, but it could*</span>
+                </span>
+              </span>
+            </label>
+          </div>
+          <div class="col-md-6">
+            <label class="form-selectgroup-item">
+              <input type="radio" name="report-type" value="1" class="form-selectgroup-input" id="formAdministratorAccount"/>
+              <span class="form-selectgroup-label d-flex align-items-center p-3">
+                <span class="me-3">
+                  <span class="form-selectgroup-check"></span>
+                </span>
+                <span class="form-selectgroup-label-content">
+                  <span class="form-selectgroup-title strong mb-1">Administrator</span>
+                  <span class="d-block text-secondary">Have full access to the website and the highest level of permissions, allowing you to do anything you please.</span>
+                </span>
+              </span>
+            </label>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-lg-8">
+            <div class="mb-3">
+              <label class="form-label">Initials for profile picture</label>
+              <div class="input-group input-group-flat">
+                <span class="input-group-text">
+                </span>
+                <input type="text" class="form-control ps-0" autocomplete="off" id="formInitials"/>
               </div>
             </div>
           </div>
+          <div class="col-lg-4">
+            <div class="mb-3">
+              <label class="form-label">Account status</label>
+              <select class="form-select">
+                <option value="1" selected id="formActiveAccount">Active</option>
+                <option value="2" id="formSuspendedAccount">Suspended</option>
+                <option value="3" id="formTerminatedAccount">Terminated</option>
+              </select>
+            </div>
+          </div>
         </div>
+      </div>
+      <div class="modal-body">
+        <div class="row">
+          <div class="col-lg-6">
+            <div class="mb-3">
+              <label class="form-label">Username</label>
+              <input type="text" class="form-control" id="formUsername"/>
+            </div>
+          </div>
+          <div class="col-lg-6">
+            <div class="mb-3">
+              <label class="form-label">Date of birth</label>
+              <input type="date" class="form-control" id="formDOB"/>
+            </div>
+          </div>
+          <div class="col-lg-12">
+            <div>
+              <label class="form-label">Account bio</label>
+              <textarea class="form-control" rows="3" id="formBio"></textarea>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="modal-footer">
+        <a href="#" class="btn btn-link link-secondary" data-bs-dismiss="modal">
+          Cancel
+        </a>
+        <a href="#" class="btn btn-primary ms-auto text-white" data-bs-dismiss="modal" onClick={editAccountDetails}>
+          Save changes
+        </a>
+      </div>
+    </div>
+  </div>
+</div>
         <button id="item2" className="btn btn-success btn-lg" onClick={successButtonOnclick}>Click me! successful large button</button>
         <button id="item3" className="btn btn-warning btn-sm w-25" onClick={warningButtonOnclick}>Click me! warning small button</button>
         <button id="item4" className="btn btn-danger w-25" onClick={dangerButtonOnclick}>Click me! dangerous button 25w button</button>
