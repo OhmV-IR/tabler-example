@@ -58,6 +58,12 @@
   position:absolute;
   right:25vw;
   bottom:0px;
+  height:52.5vh;
+  width:26.640625vw;
+}
+/* size of the image also sets size of the text inherently because the text fills up any space left by the image */
+#cardImage {
+  height:30vh;
 }
 #okText {
   color:#ffffffff;
@@ -166,12 +172,12 @@
 }
 #item8 {
   position:absolute;
-  top:71vh;
+  top:70vh;
   left:0vw;
 }
 #item9 {
   position:absolute;
-  top:77.25vh;
+  top:76.5vh;
   left:3px;
 }
 #progressBarExplanation {

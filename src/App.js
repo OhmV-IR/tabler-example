@@ -2,21 +2,11 @@ import './App.css';
 import { Analytics } from '@vercel/analytics/react';
 import React, { useState, useEffect } from 'react';
 import ApexCharts from 'apexcharts'
-import { IconBellRinging, IconBellRingingFilled, IconBrandFacebookFilled, IconBrandGithub, IconBrandPinterest, IconCloudLockOpen, IconSettings, IconPower, IconLock, IconCheck, IconBrandTwitter, IconX } from '@tabler/icons-react';
+import { IconBellRinging, IconBellRingingFilled, IconBrandGithub, IconBrandPinterest, IconCloudLockOpen, IconSettings, IconPower, IconLock, IconCheck, IconBrandTwitter, IconX } from '@tabler/icons-react';
 
 /* TODO:
 - Make card scale with screen res
 */
-
-/*
-          <h4 id="progressBarExplanation">Arbitrary progress bars</h4>
-          <div id="progressBar" className="progress">
-            <div id="progressBarFilled" className="progress-bar bg-green" role="progressbar" aria-valuenow="25" aria-valuemin="0" aria-valuemax="50" aria-label="50% Complete">
-              <span>25%</span>
-            </div>
-          </div>
-          <div id="spinningLoading" className="spinner-border text-purple"></div>
-        */
 function App() {
   useEffect(() => {
     var options = {
@@ -250,7 +240,6 @@ function App() {
     </div>
   </div>
 </div>
-
         <div id="chart"></div>
         <div className="leftAlign">
           <p >Using the <a href="https://www.github.com/tabler/tabler" target="_blank" rel="noreferrer">tabler package,</a> you can add icons representing brands and other actions to your website</p>
@@ -438,9 +427,9 @@ function App() {
         </div>
         <div id="textImageCard" className="card">
           <div id="cardImage" className="img-responsive img-responsive-21x9 card-img-top"></div>
-          <div className="card-body">
+          <div className="card-body" id="cardText">
             <h3 className="card-title">Card with title and image</h3>
-            <p className="text-secondary">Secondary text attached to card</p>
+            <p className="text-secondary">Secondary text attached to card, this can be used to describe the image or for other purposes of your choosing</p>
           </div>
         </div>
       </div></>
