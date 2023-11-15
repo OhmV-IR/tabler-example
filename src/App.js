@@ -4,8 +4,8 @@ import React, { useState, useEffect } from 'react';
 import ApexCharts from 'apexcharts'
 import { IconBellRinging, IconBellRingingFilled, IconBrandGithub, IconBrandPinterest, IconCloudLockOpen, IconSettings, IconPower, IconLock, IconCheck, IconBrandTwitter, IconX } from '@tabler/icons-react';
 
-/* TODO:
-- Make card scale with screen res
+/* TODO: 
+- Add inline player
 */
 function App() {
   useEffect(() => {
@@ -154,7 +154,8 @@ function App() {
   }
   const editAccountDetails = async event => {
     console.log("edited account details");
-    document.getElementById("fullNameDatagrid").innerHTML = document.getElementById("formFullName").value;
+    if(document.getElementById("formFullName").value != ""){
+    document.getElementById("fullNameDatagrid").innerHTML = document.getElementById("formFullName").value;}
     // 0 for error, 1 for active, 2 for suspended, 3 for terminated
     var accountState;
     // 0 for error, 1 for standard, 2 for admin
@@ -166,20 +167,25 @@ function App() {
       accountPermissions = '<span class="status status-purple">Administrator</span>';
     }
     document.getElementById("avatarPicture").innerHTML = '<span class="badge bg-success"></span>' + document.getElementById("formInitials").value;
-    if(document.getElementById("formActiveAccount").checked){
+    if(document.getElementById("formActiveAccount").selected){
       accountState = '<span class="status status-green">Active</span>';
     }
-    else if(document.getElementById("formSuspendedAccount").checked){
+    else if(document.getElementById("formSuspendedAccount").selected){
       accountState = '<span class="status status-orange">Suspended</span>';
     }
     else{
       accountState = '<span class="status status-red">Terminated</span>';
     }
-    document.getElementById("usernameDatagrid").innerHTML = document.getElementById("formUsername").value;
-    document.getElementById("bioDatagrid").innerHTML = document.getElementById("formBio").value;
+    if(document.getElementById("formUsername").innerHTML != ""){
+      document.getElementById("usernameDatagrid").innerHTML = document.getElementById("formUsername").value; }
+      if(document.getElementById("formBio").value != ""){
+    document.getElementById("bioDatagrid").innerHTML = document.getElementById("formBio").value;}
     var dateInput = new Date(document.getElementById("formDOB").value);
+    if(dateInput != 'Invalid Date'){
+      console.log(dateInput)
     document.getElementById("DOBDatagrid").innerHTML = String(dateInput.getMonth() + 1) + '/' + String(dateInput.getDay()) + '/' + String(dateInput.getFullYear());
-    document.getElementById("statusDatagrid").innerHTML = accountState + accountPermissions;
+    }
+      document.getElementById("statusDatagrid").innerHTML = accountState + accountPermissions;
   }
   // {locked
   // ? yes condition html goes here
