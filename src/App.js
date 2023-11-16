@@ -3,10 +3,6 @@ import { Analytics } from '@vercel/analytics/react';
 import React, { useState, useEffect } from 'react';
 import ApexCharts from 'apexcharts'
 import { IconBellRinging, IconBellRingingFilled, IconBrandGithub, IconBrandPinterest, IconCloudLockOpen, IconSettings, IconPower, IconLock, IconCheck, IconBrandTwitter, IconX } from '@tabler/icons-react';
-
-/* TODO: 
-- Add inline player
-*/
 function App() {
   useEffect(() => {
     var options = {
@@ -103,17 +99,6 @@ function App() {
     }
     setTimeout(resetAlert, 7500);
   }
-  const infoButtonOnclick = async event => {
-    var infoAlert = document.getElementById("infoAlert");
-    var pageTitle = document.getElementById("pageTitle");
-    infoAlert.style.display = "block";
-    pageTitle.innerHTML = "informational tab";
-    function resetAlert() {
-      infoAlert.style.display = "none";
-      pageTitle.innerHTML = "tabler-example";
-    }
-    setTimeout(resetAlert, 7500);
-  }
   const offToOnTransition = async event => {
     if (!animRunning) {
       var bellicon1 = document.getElementById("bellicon1")
@@ -166,7 +151,7 @@ function App() {
     else {
       accountPermissions = '<span class="status status-purple">Administrator</span>';
     }
-    document.getElementById("avatarPicture").innerHTML = '<span class="badge bg-success"></span>' + document.getElementById("formInitials").value;
+    document.getElementById("avatarPicture").innerHTML = '<span className="badge bg-success"></span>' + document.getElementById("formInitials").value;
     if(document.getElementById("formActiveAccount").selected){
       accountState = '<span class="status status-green">Active</span>';
     }
@@ -213,9 +198,7 @@ function App() {
             <div className="col lg-6">
               <div id="successAlert" className="alert alert-success" role="alert">Successful! Everything worked!</div>
               <div id="warningAlert" className="alert alert-warning" role="alert">Something went wrong, try again</div>
-              <div id="dangerAlert" className="alert alert-danger" role="alert">Danger! World is ending in 30 seconds!!!</div>
-              <div id="infoAlert" className="alert alert-info" role="alert">Info: This is a very cool website built by @OhmVIR</div>
-            </div></div></div></div><div className="lockingDiv">
+              <div id="dangerAlert" className="alert alert-danger" role="alert">Danger! World is ending in 30 seconds!!!</div>            </div></div></div></div><div className="lockingDiv">
             <span className="avatar bg-purple-lt" id="avatarPicture" onClick={toggleDatagrid}><span className="badge bg-success"></span>AB</span>
             <div className="datagrid" id="datagrid">
   <div className="datagrid-item" id="datagridItem1">
@@ -283,67 +266,67 @@ function App() {
   </span>
 </div>
           <div id="spinningLoading" className="spinner-border text-purple"></div></div>
-        <button type="button" id="item1" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
+        <button type="button" id="item1" className="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
   Edit account details
 </button>
-<div class="modal" id="exampleModal" tabindex="-1">
-  <div class="modal-dialog modal-lg" role="document">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title">Account details</h5>
-        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+<div className="modal" id="exampleModal" tabindex="-1">
+  <div className="modal-dialog modal-lg" role="document">
+    <div className="modal-content">
+      <div className="modal-header">
+        <h5 className="modal-title">Account details</h5>
+        <button type="button" className="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
-      <div class="modal-body">
-        <div class="mb-3">
-          <label class="form-label">Name</label>
-          <input type="text" class="form-control" name="example-text-input" placeholder="Your full name" id="formFullName" />
+      <div className="modal-body">
+        <div className="mb-3">
+          <label className="form-label">Name</label>
+          <input type="text" className="form-control" name="example-text-input" placeholder="Your full name" id="formFullName" />
         </div>
-        <label class="form-label">Account type</label>
-        <div class="form-selectgroup-boxes row mb-3">
-          <div class="col-md-6">
-            <label class="form-selectgroup-item">
-              <input type="radio" name="report-type" value="1" class="form-selectgroup-input" checked id="formStandardAccount" />
-              <span class="form-selectgroup-label d-flex align-items-center p-3">
-                <span class="me-3">
-                  <span class="form-selectgroup-check"></span>
+        <label className="form-label">Account type</label>
+        <div className="form-selectgroup-boxes row mb-3">
+          <div className="col-md-6">
+            <label className="form-selectgroup-item">
+              <input type="radio" name="report-type" value="1" className="form-selectgroup-input" checked id="formStandardAccount" />
+              <span className="form-selectgroup-label d-flex align-items-center p-3">
+                <span className="me-3">
+                  <span className="form-selectgroup-check"></span>
                 </span>
-                <span class="form-selectgroup-label-content">
-                  <span class="form-selectgroup-title strong mb-1">Standard</span>
-                  <span class="d-block text-secondary">Only have basic access and permissions. *This does not actually change anything, but it could*</span>
+                <span className="form-selectgroup-label-content">
+                  <span className="form-selectgroup-title strong mb-1">Standard</span>
+                  <span className="d-block text-secondary">Only have basic access and permissions. *This does not actually change anything, but it could*</span>
                 </span>
               </span>
             </label>
           </div>
-          <div class="col-md-6">
-            <label class="form-selectgroup-item">
-              <input type="radio" name="report-type" value="1" class="form-selectgroup-input" id="formAdministratorAccount"/>
-              <span class="form-selectgroup-label d-flex align-items-center p-3">
-                <span class="me-3">
-                  <span class="form-selectgroup-check"></span>
+          <div className="col-md-6">
+            <label className="form-selectgroup-item">
+              <input type="radio" name="report-type" value="1" className="form-selectgroup-input" id="formAdministratorAccount"/>
+              <span className="form-selectgroup-label d-flex align-items-center p-3">
+                <span className="me-3">
+                  <span className="form-selectgroup-check"></span>
                 </span>
-                <span class="form-selectgroup-label-content">
-                  <span class="form-selectgroup-title strong mb-1">Administrator</span>
-                  <span class="d-block text-secondary">Have full access to the website and the highest level of permissions, allowing you to do anything you please.</span>
+                <span className="form-selectgroup-label-content">
+                  <span className="form-selectgroup-title strong mb-1">Administrator</span>
+                  <span className="d-block text-secondary">Have full access to the website and the highest level of permissions, allowing you to do anything you please.</span>
                 </span>
               </span>
             </label>
           </div>
         </div>
-        <div class="row">
-          <div class="col-lg-8">
-            <div class="mb-3">
-              <label class="form-label">Initials for profile picture</label>
-              <div class="input-group input-group-flat">
-                <span class="input-group-text">
+        <div className="row">
+          <div className="col-lg-8">
+            <div className="mb-3">
+              <label className="form-label">Initials for profile picture</label>
+              <div className="input-group input-group-flat">
+                <span className="input-group-text">
                 </span>
-                <input type="text" class="form-control ps-0" autocomplete="off" id="formInitials"/>
+                <input type="text" className="form-control ps-0" autocomplete="off" id="formInitials"/>
               </div>
             </div>
           </div>
-          <div class="col-lg-4">
-            <div class="mb-3">
-              <label class="form-label">Account status</label>
-              <select class="form-select">
+          <div className="col-lg-4">
+            <div className="mb-3">
+              <label className="form-label">Account status</label>
+              <select className="form-select">
                 <option value="1" selected id="formActiveAccount">Active</option>
                 <option value="2" id="formSuspendedAccount">Suspended</option>
                 <option value="3" id="formTerminatedAccount">Terminated</option>
@@ -352,33 +335,33 @@ function App() {
           </div>
         </div>
       </div>
-      <div class="modal-body">
-        <div class="row">
-          <div class="col-lg-6">
-            <div class="mb-3">
-              <label class="form-label">Username</label>
-              <input type="text" class="form-control" id="formUsername"/>
+      <div className="modal-body">
+        <div className="row">
+          <div className="col-lg-6">
+            <div className="mb-3">
+              <label className="form-label">Username</label>
+              <input type="text" className="form-control" id="formUsername"/>
             </div>
           </div>
-          <div class="col-lg-6">
-            <div class="mb-3">
-              <label class="form-label">Date of birth</label>
-              <input type="date" class="form-control" id="formDOB"/>
+          <div className="col-lg-6">
+            <div className="mb-3">
+              <label className="form-label">Date of birth</label>
+              <input type="date" className="form-control" id="formDOB"/>
             </div>
           </div>
-          <div class="col-lg-12">
+          <div className="col-lg-12">
             <div>
-              <label class="form-label">Account bio</label>
-              <textarea class="form-control" rows="3" id="formBio"></textarea>
+              <label className="form-label">Account bio</label>
+              <textarea className="form-control" rows="3" id="formBio"></textarea>
             </div>
           </div>
         </div>
       </div>
-      <div class="modal-footer">
-        <a href="#" class="btn btn-link link-secondary" data-bs-dismiss="modal">
+      <div className="modal-footer">
+        <a href="#" className="btn btn-link link-secondary" data-bs-dismiss="modal">
           Cancel
         </a>
-        <a href="#" class="btn btn-primary ms-auto text-white" data-bs-dismiss="modal" onClick={editAccountDetails}>
+        <a href="#" className="btn btn-primary ms-auto text-white" data-bs-dismiss="modal" onClick={editAccountDetails}>
           Save changes
         </a>
       </div>
@@ -387,11 +370,9 @@ function App() {
 </div>
         <button id="item2" className="btn btn-success btn-lg" onClick={successButtonOnclick}>Click me! successful large button</button>
         <button id="item3" className="btn btn-warning btn-sm w-25" onClick={warningButtonOnclick}>Click me! warning small button</button>
-        <button id="item4" className="btn btn-danger w-25" onClick={dangerButtonOnclick}>Click me! dangerous button 25w button</button>
-        <button id="item5" className="btn btn-info w-25" onClick={infoButtonOnclick}>Click me! I give info 25w button</button>
-        <button id="item6" className="btn btn-outline-dark w-25">This is an outlined button</button>
-        <button id="item7" className="btn btn-pill btn-lime w-25">This is a lime pill button</button>
-        <button id="item8" type="button" className="btn btn-danger w-25">
+        <button id="item4" className="btn btn-danger w-25" onClick={dangerButtonOnclick}>Click me! dangerous button 25w button</button>        <button id="item6" className="btn btn-outline-dark w-25">This is an outlined button</button>
+        <button id="item5" className="btn btn-pill btn-lime w-25">This is a lime pill button</button>
+        <button id="item6" type="button" className="btn btn-danger w-25">
           <svg xmlns="http://www.w3.org/2000/svg" className="icon icon-tabler icon-tabler-link" width="24" height="24" viewBox="0 0 24 24" strokeWidth="2" stroke="currentColor" fill="none" strokeLinecap="round" strokeLinejoin="round">
             <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
             <path d="M9 15l6 -6"></path>
@@ -400,7 +381,7 @@ function App() {
           </svg>
           Share link
         </button>
-        <h4 id="item9">Post tags(multiple colors, shapes .etc offered)<span className="badge bg-red text-white">Bug</span></h4>
+        <h4 id="item7">Post tags(multiple colors, shapes .etc offered)<span className="badge bg-red text-white">Bug</span></h4>
         <div id="carouselExampleIndicators" className="carousel slide w-25">
           <div className="carousel-indicators">
             <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" className="active" aria-current="true" aria-label="Slide 1"></button>
@@ -435,7 +416,7 @@ function App() {
           <div id="cardImage" className="img-responsive img-responsive-21x9 card-img-top"></div>
           <div className="card-body" id="cardText">
             <h3 className="card-title">Card with title and image</h3>
-            <p className="text-secondary">Secondary text attached to card, this can be used to describe the image or for other purposes of your choosing</p>
+            <p className="text-secondary">Secondary text</p>
           </div>
         </div>
       </div></>

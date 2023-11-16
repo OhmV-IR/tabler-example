@@ -12,6 +12,13 @@
   width:341px;
   height:341px;
 }
+#videoPlayer {
+  position:fixed;
+  width:40vw;
+  height:38vh;
+  bottom:0px;
+  left:0px;
+}
 #datagrid {
   position:absolute;
   display:block;
@@ -56,14 +63,15 @@
 }
 #textImageCard {
   position:fixed;
-  right:25vw;
-  bottom:0px;
-  height:44.401041666666666666666666666667vh;
-  width:26.640625vw;
+  left:0px !important;
+  bottom:0px !important;
+  display: none;
 }
+/*   height:10vh;
+  width:26.640625vw;*/
 /* size of the image also sets size of the text inherently because the text fills up any space left by the image */
 #cardImage {
-  height:30vh;
+  height:5vh !important;
 }
 #okText {
   color:#ffffffff;
@@ -128,9 +136,6 @@
 #dangerAlert {
   display: none;
 }
-#infoAlert {
-  display: none;
-}
 .lockingDiv {
   display: block;
 }
@@ -139,48 +144,38 @@
 }
 #item1 {
   position:absolute;
-  top:25vh;
+  top:20vh;
   left:0vw;
 }
 #item2 {
   position:absolute;
-  top:31.5vh;
+  top:26.5vh;
   left:0vw;
 }
 #item3 {
   position:absolute;
-  top:39.5vh;
+  top:34.5vh;
   left:0vw;
 }
 #item4 {
   position:absolute;
-  top:43.55vh;
+  top:38.55vh;
   left:0vw;
 }
 #item5 {
   position:absolute;
-  top:50vh;
+  top:45vh;
   left:0vw;
 }
 #item6 {
   position:absolute;
-  top:56.65vh;
+  top:51.65vh;
   left:0vw;
 }
 #item7 {
   position:absolute;
-  top:63.25vh;
+  top:58.25vh;
   left:0vw;
-}
-#item8 {
-  position:absolute;
-  top:70vh;
-  left:0vw;
-}
-#item9 {
-  position:absolute;
-  top:76.5vh;
-  left:3px;
 }
 #progressBarExplanation {
   position:absolute;
