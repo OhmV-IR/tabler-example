@@ -231,14 +231,14 @@ function App() {
 </div>
         <div id="chart"></div>
         <div className="leftAlign">
-          <p >Using the <a href="https://www.github.com/tabler/tabler" target="_blank" rel="noreferrer">tabler package,</a> you can add icons representing brands and other actions to your website</p>
-          <a href="https://www.pinterest.com" target="_blank" rel="noreferrer"><IconBrandPinterest className="text-pinterest-red"></IconBrandPinterest></a>
-          <IconX className="text-red"></IconX>
-          <IconCheck className="text-green"></IconCheck>
-          <a href="https://x.com" target="_blank" rel="noreferrer"><IconBrandTwitter className="text-blue"></IconBrandTwitter></a>
-          <IconPower className="text-black"></IconPower>
-          <IconSettings className="text-grey"></IconSettings>
-          <a href="https://www.github.com/tabler/tabler" target="_blank" rel="noreferrer"><IconBrandGithub className="text-github"></IconBrandGithub></a>
+          <p id="tablerStatement">Using the <a id="githubLink" href="https://www.github.com/tabler/tabler" target="_blank" rel="noreferrer">tabler package,</a> you can add icons representing brands and other actions to your website</p>
+          <a id="pinterestLink" href="https://www.pinterest.com" target="_blank" rel="noreferrer"><IconBrandPinterest className="text-pinterest-red"></IconBrandPinterest></a>
+          <IconX id="twitterIcon" className="text-red"></IconX>
+          <IconCheck id="greenCheckIcon" className="text-green"></IconCheck>
+          <a id="twitterLink" href="https://x.com" target="_blank" rel="noreferrer"><IconBrandTwitter className="text-blue"></IconBrandTwitter></a>
+          <IconPower id="powerIcon" className="text-black"></IconPower>
+          <IconSettings id="settingsCogIcon" className="text-grey"></IconSettings>
+          <a id="githubLink2" href="https://www.github.com/tabler/tabler" target="_blank" rel="noreferrer"><IconBrandGithub className="text-github"></IconBrandGithub></a>
         </div>
         <div className="center">
           <a onClick={offToOnTransition}><IconBellRinging id="bellicon1" onClick={offToOnTransition}></IconBellRinging></a>
@@ -252,16 +252,16 @@ function App() {
             </div>
           </div>
           <div className="steps" id="stepsLoading">
-  <a href="#" className="step-item" data-bs-toggle="tooltip" title="Step 1 description">
+  <a href="#" id="step1" className="step-item" data-bs-toggle="tooltip" title="Step 1 description">
     Step 1
   </a>
-  <a href="#" className="step-item" data-bs-toggle="tooltip" title="Step 2 description">
+  <a href="#" id="step2" className="step-item" data-bs-toggle="tooltip" title="Step 2 description">
     Step 2
   </a>
-  <a href="#" className="step-item active" data-bs-toggle="tooltip" title="Step 3 description">
+  <a href="#" id="step3" className="step-item active" data-bs-toggle="tooltip" title="Step 3 description">
     Step 3
   </a>
-  <span href="#" className="step-item" data-bs-toggle="tooltip" title="Step 4 description">
+  <span href="#" id="step4" className="step-item" data-bs-toggle="tooltip" title="Step 4 description">
     Step 4
   </span>
 </div>
@@ -274,7 +274,7 @@ function App() {
     <div className="modal-content">
       <div className="modal-header">
         <h5 className="modal-title">Account details</h5>
-        <button type="button" className="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        <button id="closeFormButton" type="button" className="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
       <div className="modal-body">
         <div className="mb-3">
@@ -361,7 +361,7 @@ function App() {
         <a href="#" className="btn btn-link link-secondary" data-bs-dismiss="modal">
           Cancel
         </a>
-        <a href="#" className="btn btn-primary ms-auto text-white" data-bs-dismiss="modal" onClick={editAccountDetails}>
+        <a href="#" id="formConfirmButton" className="btn btn-primary ms-auto text-white" data-bs-dismiss="modal" onClick={editAccountDetails}>
           Save changes
         </a>
       </div>
@@ -422,10 +422,10 @@ function App() {
 </ul>
         <div id="carouselExampleIndicators" className="carousel slide w-25">
           <div className="carousel-indicators">
-            <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" className="active" aria-current="true" aria-label="Slide 1"></button>
-            <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Slide 2"></button>
-            <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2" aria-label="Slide 3"></button>
-            <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="3" aria-label="Slide 4"></button>
+            <button id="carouselSlide1Button" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" className="active" aria-current="true" aria-label="Slide 1"></button>
+            <button id="carouselSlide2Button" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Slide 2"></button>
+            <button id="carouselSlide3Button" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2" aria-label="Slide 3"></button>
+            <button id="carouselSlide4Button" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="3" aria-label="Slide 4"></button>
           </div>
           <div className="carousel-inner">
             <div className="carousel-item active">
