@@ -8,6 +8,12 @@
   background-image: url(https://fastly.picsum.photos/id/872/341/341.jpg?hmac=GiMWh23GUoXNgA2Sw8Ig5bpP0sopG0FWUv2_NtmjLO8);
   height:160px;
 }
+.randomImage {
+  background-image: url(https://picsum.photos/480);
+}
+.randomImage2 {
+  background-image: url(https://picsum.photos/1920/1080);
+}
 .card {
   width:341px;
   height:341px;
@@ -18,6 +24,13 @@
   height:38vh;
   bottom:0px;
   left:0px;
+}
+#timelineList {
+  position:fixed;
+  width:30vw;
+  height:60vh;
+  bottom:-50px;
+  left:42vw;
 }
 #datagrid {
   position:absolute;
@@ -210,9 +223,9 @@
 }
 #stepsLoading {
   position:absolute;
-  width:34.5vw;
-  left:23.25vw;
-  top:45vh;
+  width:32vw;
+  left:25.5vw;
+  top:13vh;
 }
 .text-black {
   color:#000000;

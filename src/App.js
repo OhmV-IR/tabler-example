@@ -382,6 +382,44 @@ function App() {
           Share link
         </button>
         <h4 id="item7">Post tags(multiple colors, shapes .etc offered)<span className="badge bg-red text-white">Bug</span></h4>
+        <ul class="timeline" id="timelineList">
+  <li class="timeline-event">
+    <div class="timeline-event-icon bg-twitter-lt">
+    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-user-circle" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M12 12m-9 0a9 9 0 1 0 18 0a9 9 0 1 0 -18 0" /><path d="M12 10m-3 0a3 3 0 1 0 6 0a3 3 0 1 0 -6 0" /><path d="M6.168 18.849a4 4 0 0 1 3.832 -2.849h4a4 4 0 0 1 3.834 2.855" /></svg>
+    </div>
+    <div class="card timeline-event-card">
+      <div class="card-body">
+        <div class="text-secondary float-end">10 hrs ago</div>
+        <h4>+1150 Followers</h4>
+        <p class="text-secondary">You’re getting more and more followers, keep it up!</p>
+      </div>
+    </div>
+  </li>
+  <li class="timeline-event">
+    <div class="timeline-event-icon">
+    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-user-circle" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M12 12m-9 0a9 9 0 1 0 18 0a9 9 0 1 0 -18 0" /><path d="M12 10m-3 0a3 3 0 1 0 6 0a3 3 0 1 0 -6 0" /><path d="M6.168 18.849a4 4 0 0 1 3.832 -2.849h4a4 4 0 0 1 3.834 2.855" /></svg>
+    </div>
+    <div class="card timeline-event-card">
+      <div class="card-body">
+        <div class="text-secondary float-end">2 hrs ago</div>
+        <h4>+3 New Products were added!</h4>
+        <p class="text-secondary">Congratulations!</p>
+      </div>
+    </div>
+  </li>
+  <li class="timeline-event">
+    <div class="timeline-event-icon">
+    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-user-circle" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M12 12m-9 0a9 9 0 1 0 18 0a9 9 0 1 0 -18 0" /><path d="M12 10m-3 0a3 3 0 1 0 6 0a3 3 0 1 0 -6 0" /><path d="M6.168 18.849a4 4 0 0 1 3.832 -2.849h4a4 4 0 0 1 3.834 2.855" /></svg>
+    </div>
+    <div class="card timeline-event-card">
+      <div class="card-body">
+        <div class="text-secondary float-end">1 day ago</div>
+        <h4>Database backup completed!</h4>
+        <p class="text-secondary">Download the <a href="#">latest backup</a>.</p>
+      </div>
+    </div>
+  </li>
+</ul>
         <div id="carouselExampleIndicators" className="carousel slide w-25">
           <div className="carousel-indicators">
             <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" className="active" aria-current="true" aria-label="Slide 1"></button>
