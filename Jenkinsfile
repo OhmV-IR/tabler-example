@@ -1,5 +1,5 @@
 pipeline {
-    agent any
+    agent { label 'windows' }
     
     tools {
         nodejs 'node24'
@@ -18,19 +18,19 @@ pipeline {
         
         stage("deps"){
             steps {
-                sh "npm install"
+                bat "npm install"
             }
         }
         
         stage("build"){
             steps {
-                sh "npm run build"
+                bat "npm run build"
             }
         }
         
         stage("archive"){
             steps {
-                archiveArtifacts artifacts: 'dist/**', fingerprint: true
+                archiveArtifacts artifacts: 'build/**', fingerprint: true
             }
         }
     }
