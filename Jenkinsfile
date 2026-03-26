@@ -2,7 +2,7 @@ pipeline {
     agent { label 'windows' }
     
     tools {
-        nodejs 'node24'
+        nodejs 'node16'
     }
     
     environment {
